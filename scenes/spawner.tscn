@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cev76i1if3psi"]
+
+[ext_resource type="Texture2D" uid="uid://d2txgbruwqyc6" path="res://assets/sprites/spawner.png" id="1_2vbf6"]
+
+[node name="spawner" type="PathFollow2D" unique_id=262814400]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1133887541]
+texture = ExtResource("1_2vbf6")

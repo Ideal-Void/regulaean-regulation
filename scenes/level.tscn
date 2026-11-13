@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bp368vy6717ku"]
+
+[ext_resource type="PackedScene" uid="uid://b53twcqby28bd" path="res://scenes/shooter.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://cev76i1if3psi" path="res://scenes/spawner.tscn" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://cndx06x6kgcmb" path="res://scenes/exit.tscn" id="2_mx8sn"]
+
+[sub_resource type="Curve2D" id="Curve2D_rd3vj"]
+resource_name = "pathcurve"
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 1024, 64, 0, 0, 0, 0, 1024, 512, 0, 0, 0, 0, 64, 512, 0, 0, 0, 0, 64, 128, 0, 0, 0, 0, 768, 128, 0, 0, 0, 0, 768, 384)
+}
+point_count = 7
+
+[node name="level" type="Node2D" unique_id=2090033610]
+
+[node name="path" type="Path2D" parent="." unique_id=744974956]
+curve = SubResource("Curve2D_rd3vj")
+
+[node name="spawner" parent="path" unique_id=526020044 instance=ExtResource("1_w8frs")]
+position = Vector2(64, 64)
+
+[node name="exit" parent="path" unique_id=407936158 instance=ExtResource("2_mx8sn")]
+position = Vector2(768, 384)
+rotation = 1.5707964
+progress = 3711.9985
+
+[node name="backgroud" type="TextureRect" parent="." unique_id=1008876645]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="shooter" parent="." unique_id=249658188 instance=ExtResource("1_2q6dc")]
+position = Vector2(588, 337)

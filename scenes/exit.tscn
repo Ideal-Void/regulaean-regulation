@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cndx06x6kgcmb"]
+
+[ext_resource type="Texture2D" uid="uid://biie1ugbvvmiv" path="res://assets/sprites/exit.png" id="1_l0aq0"]
+
+[node name="exit" type="PathFollow2D" unique_id=907957583]
+loop = false
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1133887541]
+texture = ExtResource("1_l0aq0")
