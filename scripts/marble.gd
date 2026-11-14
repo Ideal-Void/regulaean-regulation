@@ -4,7 +4,7 @@ extends Area2D
 
 var speed: int
 
-func setup(shotspeed: int):
+func set_speed(shotspeed: int):
 	speed = shotspeed
 
 # Called when the node enters the scene tree for the first time.

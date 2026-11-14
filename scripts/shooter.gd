@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func shoot():
 	var m = marble.instantiate()
-	m.setup(750 if not speedshot else 1500)
+	m.set_speed(750 if not speedshot else 1500)
 	owner.add_child(m)
 	m.transform = owner.global_transform
 
