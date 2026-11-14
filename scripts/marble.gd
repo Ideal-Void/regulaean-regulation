@@ -1,9 +1,11 @@
 extends Area2D
 
 @export var color_type : int
-@export var marble : PackedScene
 
-var speed = 750
+var speed: int
+
+func setup(shotspeed: int):
+	speed = shotspeed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

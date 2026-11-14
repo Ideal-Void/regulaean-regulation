@@ -1,6 +1,7 @@
 extends Node2D
 
 var marble : PackedScene = preload("res://scenes/marble.tscn")
+var speedshot = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,6 +9,7 @@ func _ready() -> void:
 
 func shoot():
 	var m = marble.instantiate()
+	m.setup(750 if not speedshot else 1500)
 	owner.add_child(m)
 	m.transform = owner.global_transform
 
