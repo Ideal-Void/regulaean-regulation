@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://daoyn25lm2dsd" path="res://scripts/shooter.gd" id="1_1e8ai"]
 [ext_resource type="Texture2D" uid="uid://0fltnscynxdy" path="res://assets/sprites/shooter.png" id="1_gt117"]
 [ext_resource type="PackedScene" uid="uid://bt1kps85iwtqc" path="res://scenes/marble.tscn" id="3_lynhg"]
+[ext_resource type="AudioStream" uid="uid://o64qk3yaisr2" path="res://assets/sounds/launch_sphere.ogg" id="4_ld1l8"]
+[ext_resource type="AudioStream" uid="uid://vj33u0e4p2pl" path="res://assets/sounds/bullet_swap.ogg" id="5_xxh7r"]
+[ext_resource type="AudioStream" uid="uid://x4n4utp4e66y" path="res://assets/sounds/bullet_reload.ogg" id="6_ts0hh"]
 
 [node name="shooter" type="Node2D" unique_id=249658188]
 script = ExtResource("1_1e8ai")
@@ -27,3 +30,12 @@ position = Vector2(0, 32)
 scale = Vector2(0.5, 0.5)
 
 [node name="launch" type="Marker2D" parent="." unique_id=1867085524]
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="." unique_id=2081549116]
+stream = ExtResource("4_ld1l8")
+
+[node name="swap" type="AudioStreamPlayer2D" parent="." unique_id=746778076]
+stream = ExtResource("5_xxh7r")
+
+[node name="reload" type="AudioStreamPlayer2D" parent="." unique_id=1677581879]
+stream = ExtResource("6_ts0hh")

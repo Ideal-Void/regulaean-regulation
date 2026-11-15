@@ -2,20 +2,29 @@ extends Node2D
 
 var marble : PackedScene = preload("res://scenes/marble.tscn")
 var speedshot = false
+@onready var snd_shoot = $shoot
+@onready var snd_swap = $swap
+@onready var snd_reload = $reload
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+
 func shoot():
 	var m = marble.instantiate()
 	m.set_speed(750 if not speedshot else 1500)
+	var onscreen = m.get_node("visible")
+	onscreen.screen_exited.connect(marble_offscreen)
 	owner.add_child(m)
-	m.transform = owner.global_transform
-	m.position = owner.global_position
+	snd_shoot.play()
+	m.transform = $marble.global_transform
 
 func swap():
-	print("Swap")
+	snd_swap.play()
+
+func marble_offscreen():
+	snd_reload.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
