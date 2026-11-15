@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func shoot():
 	var m = marble.instantiate()
-	m.set_speed(750 if not speedshot else 1500)
+	m.set_speed(1000 if not speedshot else 1500)
 	var onscreen = m.get_node("visible")
 	onscreen.screen_exited.connect(marble_offscreen)
 	owner.add_child(m)
