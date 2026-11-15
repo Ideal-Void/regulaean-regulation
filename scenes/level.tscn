@@ -13,6 +13,9 @@ point_count = 7
 
 [node name="level" type="Node2D" unique_id=2090033610]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1673723957]
+position = Vector2(640, 360)
+
 [node name="path" type="Path2D" parent="." unique_id=744974956]
 curve = SubResource("Curve2D_rd3vj")
 
