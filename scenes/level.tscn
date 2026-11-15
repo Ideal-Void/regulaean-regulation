@@ -29,4 +29,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="shooter" parent="." unique_id=249658188 instance=ExtResource("1_2q6dc")]
-position = Vector2(588, 337)
+position = Vector2(640, 360)
