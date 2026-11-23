@@ -2,39 +2,43 @@ extends Node2D
 
 var marble : PackedScene = preload("res://scenes/marble.tscn")
 var speedshot = false
+var can_shoot = true
 @onready var snd_shoot = $shoot
 @onready var snd_swap = $swap
 @onready var snd_reload = $reload
-@onready var to_shoot = $marble
+@onready var loaded = $marble
 @onready var backup = $backup
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	to_shoot.state = "loaded"
+	loaded.state = "loaded"
 	backup.state = "backup"
 
 func shoot():
-	to_shoot.visible = false
-	var m = marble.instantiate()
-	m.color = to_shoot.color
-	m.state = "flying"
-	m.set_speed(1000 if not speedshot else 1500)
-	m.finished.connect(reload)
-	owner.add_child(m)
-	snd_shoot.play()
-	m.transform = to_shoot.global_transform
+	if can_shoot:
+		can_shoot = false
+		loaded.visible = false
+		var m = marble.instantiate()
+		m.color = loaded.color
+		m.state = "flying"
+		m.set_speed(1000 if not speedshot else 1500)
+		m.finished.connect(reload)
+		owner.add_child(m)
+		snd_shoot.play()
+		m.transform = loaded.global_transform
 
 func swap():
-	var tmpcolor = to_shoot.color
-	to_shoot.set_color(backup.color)
+	var tmpcolor = loaded.color
+	loaded.set_color(backup.color)
 	backup.set_color(tmpcolor)
 	snd_swap.play()
 
 func reload():
-	to_shoot.set_color(backup.color)
+	loaded.set_color(backup.color)
 	backup.set_color(backup.new_color())
-	to_shoot.visible = true
+	loaded.visible = true
 	snd_reload.play()
+	can_shoot = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
