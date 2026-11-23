@@ -18,15 +18,8 @@ texture = ExtResource("1_gt117")
 [node name="marble" parent="." unique_id=1710617453 instance=ExtResource("3_lynhg")]
 position = Vector2(32, 0)
 
-[node name="backups" type="Node2D" parent="." unique_id=798767671]
+[node name="backup" parent="." unique_id=578493697 instance=ExtResource("3_lynhg")]
 position = Vector2(-32, 0)
-
-[node name="left" parent="backups" unique_id=578493697 instance=ExtResource("3_lynhg")]
-position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
-
-[node name="right" parent="backups" unique_id=1160685981 instance=ExtResource("3_lynhg")]
-position = Vector2(0, 32)
 scale = Vector2(0.5, 0.5)
 
 [node name="launch" type="Marker2D" parent="." unique_id=1867085524]
