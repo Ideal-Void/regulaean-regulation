@@ -10,7 +10,7 @@ var speedup = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Game.level_end.connect(_on_level_end)
-	for i in range(randi_range(Game.difficulty_modifier+20,Game.difficulty_modifier+40)):
+	for i in range(randi_range(Game.difficulty_modifier*10+20,Game.difficulty_modifier*10+30)):
 		var newmarb := PathFollow2D.new()
 		var minimarb := marble.instantiate()
 		newmarb.loop = false
