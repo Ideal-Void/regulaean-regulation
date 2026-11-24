@@ -1,8 +1,8 @@
-# Regulaean Regulation
+<img src="logo.svg" alt="Regulaean Regulation" width=25% />
 
 A cyberspace-themed marble-shooter game. I feel like you don't see too many marble-shooters anymore ever since the frogs and scarabs did it.
 
-Alex has a problem with bugs in his code. In fact, the bugs are *stealing* his code! Match colorful marbles together and squash the bugs to reclaim crystallized code and get the computer back to good working order.
+Alex Regulus has a problem with bugs in his code. In fact, the bugs are *stealing* his code! Match colorful marbles together and squash the bugs to reclaim crystallized code and get the computer back to good working order.
 
 ## NOTICE
 
