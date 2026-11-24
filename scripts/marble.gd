@@ -32,15 +32,15 @@ func _physics_process(delta):
 	if state == "flying":
 		position += transform.x * speed * delta
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
 func _on_area_entered(body: Area2D) -> void:
 	if body is Marble:
 		if body.state == "rolling" and state == "flying":
 			print("Hit!")
 			entering_chain.emit()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	finished.emit()
