@@ -4,7 +4,7 @@ class_name Marble
 @onready var sprite: Sprite2D = $sprite
 @export var color : String = "unset"
 @export var state : String = "unset"
-const colors : Array = ["red", "green", "blue", "cyan", "magenta", "yellow", "white"]
+const colors : Array = ["red", "green", "blue", "cyan", "magenta", "yellow", "white", "black"]
 const states : Array = ["loaded", "backup", "flying", "rolling"]
 var max_colors = 3 + Game.difficulty_modifier
 var speed: int
