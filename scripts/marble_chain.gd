@@ -21,7 +21,7 @@ func _ready() -> void:
 		chain.append(newmarb)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if chain.is_empty():
 		return
 	if chain[0].progress_ratio == 1.0 and not Game.loss:
