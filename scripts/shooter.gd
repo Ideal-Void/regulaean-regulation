@@ -11,6 +11,7 @@ var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Game.level_end.connect(_on_level_end)
 	loaded.state = "loaded"
 	backup.state = "backup"
 
@@ -54,3 +55,9 @@ func _process(_delta: float) -> void:
 		shoot()
 	if Input.is_action_just_pressed("player_swap"):
 		swap()
+
+func _on_level_end(type):
+	if type == "loss":
+		can_shoot = false
+		loaded.visible = false
+		backup.visible = false

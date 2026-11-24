@@ -1,8 +1,13 @@
 extends Node2D
 
-@export var controller_active : bool = false
+var controller_active : bool = false
+var loss = false
+var win = false
 var STICK_DEADZONE : float = 0.2
 var direction : Vector2
+var difficulty_modifier : int = 0
+signal level_begin
+signal level_end
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
