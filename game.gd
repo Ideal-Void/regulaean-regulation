@@ -8,6 +8,7 @@ var direction : Vector2
 var difficulty_modifier : int = 0
 signal level_begin
 signal level_end
+signal marble_entering_chain
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

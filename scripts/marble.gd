@@ -10,7 +10,6 @@ var max_colors = 3 + Game.difficulty_modifier
 var speed: int
 var chain_index = -1
 signal finished
-signal entering_chain
 
 func new_color():
 	return colors[randi_range(0,max_colors)]
@@ -36,11 +35,9 @@ func _physics_process(delta):
 func _process(_delta: float) -> void:
 	pass
 
-func _on_area_entered(body: Area2D) -> void:
-	if body is Marble:
-		if body.state == "rolling" and state == "flying":
-			print("Hit!")
-			entering_chain.emit()
+func _on_area_entered(body: Marble) -> void:
+	if body.state == "rolling" and state == "flying":
+		Game.marble_entering_chain.emit(body, self)
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	finished.emit()
